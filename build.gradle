@@ -5,7 +5,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.1.8.RELEASE"
     }
 }
 
@@ -21,28 +21,13 @@ subprojects {
     apply plugin: 'java'
 
     dependencyManagement {
-        dependencies {
-            dependency 'ch.qos.logback:logback-classic:1.2.3'
-            dependencySet(group: 'org.slf4j', version: '1.7.28') {
-                // API
-                entry 'slf4j-api'
-
-                // Bridges
-                entry 'jcl-over-slf4j'
-                entry 'log4j-over-slf4j'
-                entry 'jul-to-slf4j'
-            }
-            dependency 'log4j:log4j:1.2.17'
-            dependencySet(group: 'org.apache.logging.log4j', version: '2.12.1') {
-                entry 'log4j-api'
-                entry 'log4j-core'
-                entry 'log4j-to-slf4j'
-            }
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
         }
     }
 
     dependencies {
-        testCompile 'junit:junit:4.+'
+        testCompile 'junit:junit'
     }
 }
 
