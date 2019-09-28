@@ -6,17 +6,15 @@ dependencies {
     implementation project(':slf4j')
 
     // Used compile/coding time.
-    implementation 'org.slf4j:slf4j-api'
-    implementation 'org.slf4j:jul-to-slf4j' // Java Util Logging > SLF4J.
+    implementation 'org.springframework.boot:spring-boot-starter-logging' // 実際は starter-web の依存とかに入ってることが多い
 
     // Used Runtime
-    [
-            'ch.qos.logback:logback-classic', // The log implementation.
+    implementation 'org.slf4j:log4j-over-slf4j'
+    // log4j 1.x だけ個別にルーティングする必要がある
+    // 2015 年に EOL のため 2017 年に spring-boot-starter-logging からも取り除かれている
+    // https://github.com/spring-projects/spring-boot/issues/11148
 
-            'org.slf4j:jcl-over-slf4j', // Commons-Logging > SLF4J
-            'org.slf4j:log4j-over-slf4j', // Log4j 1.x > SLF4J
-            'org.apache.logging.log4j:log4j-to-slf4j', // Log4j 2.x > SLF4J
-    ].each { runtimeOnly it }
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 configurations.all {
