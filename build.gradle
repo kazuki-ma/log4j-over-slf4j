@@ -15,19 +15,18 @@ allprojects {
     repositories {
         mavenCentral()
     }
-}
-
-subprojects {
-    apply plugin: 'java'
 
     dependencyManagement {
         imports {
             mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
         }
     }
+}
+
+subprojects {
+    apply plugin: 'java'
 
     dependencies {
         testCompile 'junit:junit'
     }
 }
-
