@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE"
+    }
+}
+
+allprojects {
+    apply plugin: "io.spring.dependency-management"
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencyManagement {
+        dependencies {
+            dependency 'ch.qos.logback:logback-classic:1.2.3'
+            dependencySet(group: 'org.slf4j', version: '1.7.28') {
+                // API
+                entry 'slf4j-api'
+
+                // Bridges
+                entry 'jcl-over-slf4j'
+                entry 'log4j-over-slf4j'
+                entry 'jul-to-slf4j'
+            }
+            dependency 'log4j:log4j:1.2.17'
+            dependencySet(group: 'org.apache.logging.log4j', version: '2.12.1') {
+                entry 'log4j-api'
+                entry 'log4j-core'
+                entry 'log4j-to-slf4j'
+            }
+        }
+    }
+
+    dependencies {
+        testCompile 'junit:junit:4.+'
+    }
+}
+
