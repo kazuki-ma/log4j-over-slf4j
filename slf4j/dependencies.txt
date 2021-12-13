@@ -1,0 +1,18 @@
+
+------------------------------------------------------------
+Project ':slf4j'
+------------------------------------------------------------
+
+compileClasspath - Compile classpath for source set 'main'.
+\--- org.slf4j:slf4j-api -> 1.7.32
+
+runtimeClasspath - Runtime classpath of source set 'main'.
+\--- org.slf4j:slf4j-api -> 1.7.32
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- org.slf4j:slf4j-api -> 1.7.32
+\--- junit:junit -> 4.13.2
+     \--- org.hamcrest:hamcrest-core:1.3 -> 2.2
+          \--- org.hamcrest:hamcrest:2.2
+
+A web-based, searchable dependency report is available by adding the --scan option.
