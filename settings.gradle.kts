@@ -4,6 +4,8 @@ pluginManagement {
     }
 }
 
+include(":log4j1_ordering:bad_log4j1used")
+include(":log4j1_ordering:good_slf4jprefered")
 include("jdk")
 include("commons")
 include("log4j1")

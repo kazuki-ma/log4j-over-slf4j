@@ -5,10 +5,14 @@ plugins {
 }
 
 subprojects {
+    if (!file("src").isDirectory) {
+        return@subprojects
+    }
+
     apply {
-        plugin("org.gradle.project-report")
-        plugin("java")
         plugin("io.spring.dependency-management")
+        plugin("java")
+        plugin("org.gradle.project-report")
     }
 
     repositories {
