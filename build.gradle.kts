@@ -21,7 +21,9 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+            mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES) {
+                extra["log4j2.version"] = "2.15.0"
+            }
         }
     }
 
