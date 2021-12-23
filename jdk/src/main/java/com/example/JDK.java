@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.logging.Logger;
 
 public class JDK implements Runnable {
-    private static final Logger logger = Logger.getLogger(JDK.class.getName());
+    private static final Logger logger = java.util.logging.Logger.getLogger(JDK.class.getName());
 
     @Override
     public void run() {

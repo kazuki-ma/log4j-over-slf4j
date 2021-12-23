@@ -10,13 +10,10 @@ dependencies {
     implementation("org.slf4j:jul-to-slf4j") // Java Util Logging > SLF4J.
 
     // Used Runtime
-    listOf(
-            "ch.qos.logback:logback-classic", // The log implementation.
-
-            "org.slf4j:jcl-over-slf4j", // Commons-Logging > SLF4J
-            "org.slf4j:log4j-over-slf4j", // Log4j 1.x > SLF4J
-            "org.apache.logging.log4j:log4j-to-slf4j", // Log4j 2.x > SLF4J
-    ).forEach { runtimeOnly(it) }
+    runtimeOnly("ch.qos.logback:logback-classic") // The log implementation.
+    runtimeOnly("org.slf4j:jcl-over-slf4j") // Commons-Logging > SLF4J
+    runtimeOnly("org.slf4j:log4j-over-slf4j") // Log4j 1.x > SLF4J
+    runtimeOnly("org.apache.logging.log4j:log4j-to-slf4j") // Log4j 2.x > SLF4J
 }
 
 configurations.all {

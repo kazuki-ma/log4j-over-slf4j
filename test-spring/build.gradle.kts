@@ -9,7 +9,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-logging") // 実際は starter-web の依存とかに入ってることが多い)
 
     // Used Runtime
-    implementation("org.slf4j:log4j-over-slf4j")
+    runtimeOnly("org.slf4j:log4j-over-slf4j")
     // log4j 1.x だけ個別にルーティングする必要がある
     // 2015 年に EOL のため 2017 年に spring-boot-starter-logging からも取り除かれている
     // https://github.com/spring-projects/spring-boot/issues/11148

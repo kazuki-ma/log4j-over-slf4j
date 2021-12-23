@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.NDC;
 
 public class Log4j1 implements Runnable {
-    private final Logger logger = Logger.getLogger(Log4j1.class);
+    private final Logger logger = org.apache.log4j.Logger.getLogger(Log4j1.class);
 
     @Override
     public void run() {

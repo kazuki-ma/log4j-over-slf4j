@@ -6,7 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 public class Commons implements Runnable {
-    private static final Log logger = LogFactory.getLog(Commons.class);
+    private static final Log logger = org.apache.commons.logging.LogFactory.getLog(Commons.class);
 
     @Override
     public void run() {
